@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شرح الدرس | أ/ سامي يوسف</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --main-color: #1a4a72;
+            --accent-color: #e67e22;
+            --bg-color: #f4f7f6;
+            --sidebar-width: 300px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            direction: rtl;
+        }
+
+        /* الشريط العلوي */
+        .lesson-header {
+            background-color: var(--main-color);
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        /* تقسيم الصفحة */
+        .lesson-wrapper {
+            display: flex;
+            min-height: calc(100vh - 65px);
+        }
+
+        /* منطقة الفيديو (المحتوى الرئيسي) */
+        .video-container {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .video-player {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #000;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .video-player iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .lesson-info {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .lesson-info h2 { color: var(--main-color); margin-bottom: 10px; }
+        .lesson-info p { color: #666; line-height: 1.6; }
+
+        .action-btns {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            display: inline-block;
+        }
+
+        .btn-pdf { background: #eee; color: #333; }
+        .btn-quiz { background: var(--accent-color); color: white; }
+
+        /* قائمة الدروس الجانبية */
+        .lessons-sidebar {
+            width: var(--sidebar-width);
+            background: white;
+            border-right: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 65px);
+            position: sticky;
+            top: 65px;
+        }
+
+        .sidebar-title {
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #eee;
+            font-weight: bold;
+            color: var(--main-color);
+        }
+
+        .lesson-list {
+            list-style: none;
+            overflow-y: auto;
+        }
+
+        .lesson-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .lesson-item:hover { background: #f0f7ff; }
+        .lesson-item.active { background: #eef5ff; border-right: 4px solid var(--main-color); }
+
+        .lesson-item .icon {
+            width: 30px;
+            height: 30px;
+            background: #eee;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .lesson-item.active .icon { background: var(--main-color); color: white; }
+
+        .lesson-item-info p { font-size: 14px; font-weight: bold; margin-bottom: 3px; }
+        .lesson-item-info span { font-size: 12px; color: #999; }
+
+        /* الموبايل */
+        @media (max-width: 900px) {
+            .lesson-wrapper { flex-direction: column; }
+            .lessons-sidebar { width: 100%; height: auto; position: static; }
+            .video-container { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="lesson-header">
+        <div class="right-side">
+            <span style="font-weight: bold;">أكاديمية أ/ سامي يوسف</span>
+        </div>
+        <div class="left-side">
+            <a href="dashboard.html" class="back-btn">العودة للوحة التحكم</a>
+        </div>
+    </header>
+
+    <div class="lesson-wrapper">
+        
+        <main class="video-container">
+            <div class="video-player">
+                <iframe src="https://www.youtube.com/watch?v=j3-rDNRAquY&list=RDCRgejXCUlEg&index=18" allowfullscreen></iframe>
+            </div>
+
+            <div class="lesson-info">
+                <h2>الدرس الأول: حل معادلات الدرجة الثانية</h2>
+                <p>شرح تفصيلي لكيفية استخدام القانون العام والمميز لتحديد نوع جذري المعادلة وحلها جبرياً وبيانياً.</p>
+                
+                <div class="action-btns">
+                    <a href="#" class="btn btn-pdf">تحميل المذكرة (PDF)</a>
+                    <a href="quiz.html" class="btn btn-quiz">ابدأ اختبار الدرس</a>
+                </div>
+            </div>
+        </main>
+
+        <aside class="lessons-sidebar">
+            <div class="sidebar-title">محتويات الكورس</div>
+            <ul class="lesson-list">
+                <li class="lesson-item active">
+                    <div class="icon">1</div>
+                    <div class="lesson-item-info">
+                        <p>معادلات الدرجة الثانية</p>
+                        <span>45 دقيقة</span>
+                    </div>
+                </li>
+                <li class="lesson-item">
+                    <div class="icon">2</div>
+                    <div class="lesson-item-info">
+                        <p>الأعداد المركبة</p>
+                        <span>50 دقيقة</span>
+                    </div>
+                </li>
+                <li class="lesson-item">
+                    <div class="icon">3</div>
+                    <div class="lesson-item-info">
+                        <p>تحديد نوع جذري المعادلة</p>
+                        <span>35 دقيقة</span>
+                    </div>
+                </li>
+                <li class="lesson-item">
+                    <div class="icon">4</div>
+                    <div class="lesson-item-info">
+                        <p>العلاقة بين جذري المعادلة</p>
+                        <span>40 دقيقة</span>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+
+    </div>
+
+</body>
+</html>

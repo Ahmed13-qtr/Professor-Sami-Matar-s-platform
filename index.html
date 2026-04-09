@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة أ/سامي يوسف</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="logo-section">
+            <div class="logo-icon">∑</div>
+            <h1>أ/ سامي يوسف</h1>
+            <p>منصة الرياضيات المتكاملة</p>
+        </div>
+
+        <div class="login-card">
+            <h2>تسجيل الدخول</h2>
+            <p class="subtitle">مرحباً بك مجدداً في رحلة التميز الرياضي!</p>
+
+            <form id="loginForm">
+                <div class="input-group">
+                    <label>البريد الإلكتروني أو اسم المستخدم</label>
+                    <input type="email" placeholder="example@mail.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label>كلمة المرور</label>
+                    <input type="password" id="password" placeholder="********" required>
+                </div>
+
+                <div class="form-options">
+                    <a href="#" class="forgot-pass">نسيت كلمة المرور؟</a>
+                </div>
+
+                <button type="submit" class="login-btn">دخول الأبطال</button>
+            </form>
+
+            <div class="divider"><span>أو</span></div>
+
+            <div class="social-login">
+                <button class="google-btn">الدخول عبر Google</button>
+            </div>
+
+            <div class="signup-link">
+                ليس لديك حساب؟ <a href="signup.html">إنشاء حساب جديد الآن</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // يمنع تحميل الصفحة
+        
+        // هنا نقوم بمحاكاة "تحميل" بسيط لإعطاء لمسة احترافية
+        const btn = e.target.querySelector('.login-btn');
+        btn.innerText = 'جاري التحقق...';
+        btn.style.opacity = '0.7';
+
+        setTimeout(function() {
+            // الانتقال لصفحة لوحة التحكم
+            window.location.href = "pricing.html";
+        }, 1200);
+    });
+</script>
+</body>
+</html>

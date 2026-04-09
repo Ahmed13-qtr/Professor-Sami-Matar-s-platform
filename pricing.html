@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>باقات الاشتراك | أ/ سامي يوسف</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --main-color: #1a4a72;
+            --accent-color: #e67e22;
+            --bg-color: #f4f7f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            padding: 40px 20px;
+            direction: rtl;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .header {
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            color: var(--main-color);
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 18px;
+        }
+
+        /* شبكة الباقات */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            position: relative;
+            border: 2px solid transparent;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--main-color);
+        }
+
+        .pricing-card.popular {
+            border-color: var(--accent-color);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-color);
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .package-name {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 40px;
+            font-weight: bold;
+            color: var(--main-color);
+            margin-bottom: 25px;
+        }
+
+        .price span {
+            font-size: 16px;
+            color: #888;
+        }
+
+        .features-list {
+            list-style: none;
+            text-align: right;
+            margin-bottom: 35px;
+        }
+
+        .features-list li {
+            margin-bottom: 15px;
+            color: #555;
+            display: flex;
+            align-items: center;
+        }
+
+        .features-list li::before {
+            content: "✓";
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .buy-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: var(--main-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .buy-btn:hover {
+            background: #133654;
+        }
+
+        .popular .buy-btn {
+            background: var(--accent-color);
+        }
+
+        /* طرق الدفع */
+        .payment-methods {
+            margin-top: 60px;
+            padding: 20px;
+            background: rgba(26, 74, 114, 0.05);
+            border-radius: 15px;
+        }
+
+        .payment-methods p {
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: var(--main-color);
+        }
+
+        .methods-icons {
+            font-size: 24px;
+            color: #555;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>اشترك الآن وابدأ رحلة التفوق</h1>
+            <p>اختر الباقة المناسبة لك وانضم لآلاف الطلاب المتفوقين</p>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3 class="package-name">اشتراك شهري</h3>
+                <div class="price">150 <span>ريال / شهر</span></div>
+                <ul class="features-list">
+                    <li>مشاهدة جميع محاضرات الشهر</li>
+                    <li>تحميل مذكرات الشرح PDF</li>
+                    <li>دخول الاختبارات الأسبوعية</li>
+                    <li>دعم فني واستفسارات 24/7</li>
+                </ul>
+                <a href="dashboard.html" class="buy-btn" onclick="alert('سيتم توجيهك لبوابة دفع فوري...')">اشترك الآن</a>
+            </div>
+
+            <div class="pricing-card popular">
+                <div class="popular-badge">الأكثر طلباً</div>
+                <h3 class="package-name">اشتراك الترم كامل</h3>
+                <div class="price">500 <span>ريال / ترم</span></div>
+                <ul class="features-list">
+                    <li>كل مميزات الاشتراك الشهري</li>
+                    <li>خصم خاص على المراجعات النهائية</li>
+                    <li>مذكرات مراجعة حصرية</li>
+                    <li>لقاء زووم مباشر شهرياً مع الأستاذ</li>
+                </ul>
+                <a href="dashboard.html" class="buy-btn" onclick="alert('سيتم توجيهك لبوابة دفع فوري...')">اشترك الآن</a>
+            </div>
+
+            <div class="pricing-card">
+                <h3 class="package-name">فصل دراسي واحد</h3>
+                <div class="price">100 <span>ريال / فصل</span></div>
+                <ul class="features-list">
+                    <li>مشاهدة دروس فصل معين فقط</li>
+                    <li>مذكرة الفصل الخاصة</li>
+                    <li>اختبار شامل على الفصل</li>
+                    <li>صلاحية دائمة لهذا الفصل</li>
+                </ul>
+                <a href="dashboard.html" class="buy-btn" onclick="alert('سيتم توجيهك لبوابة دفع فوري...')">اشترك الآن</a>
+            </div>
+        </div>
+
+        <div class="payment-methods">
+            <p>طرق الدفع المتاحة</p>
+            <div class="methods-icons">
+                <span>Fawry</span> | <span>Vodafone Cash</span> | <span>Visa / Master Card</span>
+            </div>
+        </div>
+        
+        <div style="margin-top: 30px;">
+            <a href="dashboard.html" style="color: var(--main-color); text-decoration: none;">← العودة للوحة التحكم</a>
+        </div>
+    </div>
+
+</body>
+</html>

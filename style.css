@@ -1,0 +1,442 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); /* نقش هندسي خفيف */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.logo-section {
+    margin-bottom: 30px;
+}
+
+.logo-icon {
+    font-size: 50px;
+    color: #1a4a72;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.logo-section h1 {
+    color: #1a4a72;
+    font-size: 28px;
+}
+
+.logo-section p {
+    color: #666;
+    font-size: 14px;
+}
+
+.login-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s;
+    text-align: right;
+}
+
+.input-group input:focus {
+    border-color: #1a4a72;
+    box-shadow: 0 0 5px rgba(26, 74, 114, 0.2);
+}
+
+.form-options {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.forgot-pass {
+    font-size: 13px;
+    color: #1a4a72;
+    text-decoration: none;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background: #1a4a72;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #133654;
+}
+
+.divider {
+    margin: 25px 0;
+    position: relative;
+    border-bottom: 1px solid #eee;
+}
+
+.divider span {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 0 15px;
+    color: #999;
+    font-size: 14px;
+}
+
+.google-btn {
+    width: 100%;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #555;
+    transition: 0.3s;
+}
+
+.google-btn:hover {
+    background: #f9f9f9;
+}
+
+.signup-link {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #666;
+}
+
+.signup-link a {
+    color: #e67e22;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* تنسيق قائمة اختيار السنة الدراسية */
+.custom-select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+    font-family: 'Cairo', sans-serif;
+    outline: none;
+    cursor: pointer;
+}
+
+.custom-select:focus {
+    border-color: #1a4a72;
+}
+
+/* تنسيق النافذة المنبثقة */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none; /* مخفية افتراضياً */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px); /* جعل الخلفية مغبشة */
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    animation: slideUp 0.4s ease-out;
+}
+
+.success-icon {
+    width: 70px;
+    height: 70px;
+    background: #27ae60;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    margin: 0 auto 20px;
+}
+
+.modal-content h3 {
+    color: #1a4a72;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* حركة التحميل البسيطة */
+.loader {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #1a4a72;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto 0;
+}
+
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+/* تنسيق لوحة التحكم الرئيسية */
+
+.dashboard-body {
+    display: flex;
+    background: #f0f2f5;
+    min-height: 100vh;
+    align-items: flex-start; /* تغيير الـ alignment */
+}
+
+/* القائمة الجانبية */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #1a4a72;
+    color: white;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar-logo h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    padding: 15px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.nav-links li.active, .nav-links li:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+/* المحتوى الرئيسي */
+.main-content {
+    flex: 1;
+    padding: 30px;
+}
+
+.main-header {
+    margin-bottom: 30px;
+}
+
+.stats-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.stat-card .number {
+    font-size: 30px;
+    font-weight: bold;
+    color: #1a4a72;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.course-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.course-img {
+    height: 120px;
+    background: #1a4a72;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.course-info {
+    padding: 20px;
+}
+
+.progress-bar {
+    background: #eee;
+    height: 8px;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+.progress {
+    background: #e67e22;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.start-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #1a4a72;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+
+/* 1. الإعدادات العامة - General Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    direction: rtl;
+    color: #333;
+}
+
+/* 2. صفحات تسجيل الدخول والتسجيل (Login & Signup) */
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+}
+
+.login-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+.login-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.input-group {
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.input-group input, .custom-select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    font-family: 'Cairo';
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #1a4a72;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}

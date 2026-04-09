@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>إنشاء حساب جديد | أ/سامي يوسف</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="logo-section">
+        <div class="logo-icon">∑</div>
+        <h1>أ/ سامي يوسف</h1>
+        <p>انضم لأسرة المتفوقين في الرياضيات</p>
+      </div>
+
+      <div class="login-card">
+        <h2>إنشاء حساب جديد</h2>
+        <p class="subtitle">بيانات بسيطة تفصلك عن محتواك التعليمي</p>
+
+        <form id="signupForm">
+          <div class="input-group">
+            <label>الاسم بالكامل</label>
+            <input type="text" placeholder="اكتب اسمك الثلاثي" required />
+          </div>
+
+          <div class="input-group">
+            <label>البريد الإلكتروني</label>
+            <input type="email" placeholder="example@mail.com" required />
+          </div>
+
+          <div class="input-group">
+            <label>رقم الهاتف (واتساب)</label>
+            <input type="tel" placeholder="01xxxxxxxxx" required />
+          </div>
+
+          <div class="input-group">
+            <label>السنة الدراسية</label>
+            <select class="custom-select" required>
+              <option value="" disabled selected>اختر سنتك الدراسية</option>
+              <option value="1">الصف الأول الثانوي</option>
+              <option value="2">الصف الثاني الثانوي</option>
+              <option value="3">الصف الثالث الثانوي</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label>كلمة المرور</label>
+            <input type="password" placeholder="اختر كلمة مرور قوية" required />
+          </div>
+
+          <button type="submit" class="login-btn">
+            إنشاء الحساب والبدء فوراً
+          </button>
+        </form>
+
+        <div class="signup-link">
+          لديك حساب بالفعل؟ <a href="index.html">تسجيل الدخول من هنا</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="successModal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="success-icon">✓</div>
+        <h3>تم إنشاء الحساب بنجاح!</h3>
+        <p>أهلاً بك يا بطل في رحلة التميز مع الأستاذ سامي يوسف. جاري نقلك لصفحة الدخول...</p>
+        <div class="loader"></div>
+    </div>
+</div>
+
+    <script>
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // منع إرسال النموذج فعلياً الآن
+        
+        // إظهار النافذة المنبثقة
+        const modal = document.getElementById('successModal');
+        modal.style.display = 'flex';
+        
+        // الانتقال لصفحة تسجيل الدخول بعد 3 ثواني لإعطاء وقت للطالب ليقرأ الرسالة
+        setTimeout(function() {
+            window.location.href = "index.html";
+        }, 3000);
+    });
+</script>
+  </body>
+</html>
